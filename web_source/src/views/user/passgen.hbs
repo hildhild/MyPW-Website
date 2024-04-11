@@ -1,0 +1,231 @@
+<link rel="stylesheet" href="/css/passgen.css">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const formData = new FormData(form);
+          console.log(formData);
+          for (let [key, value] of formData.entries()) {
+            localStorage.setItem(key, value);
+          }
+          form.submit()
+        
+        });
+        // Retrieve checkbox values from localStorage and set them
+        const digitCheckbox = document.getElementById('digitCheck');
+        if (localStorage.getItem('useDigit') === 'on') {
+          digitCheckbox.checked = true;
+        } else {
+          digitCheckbox.checked = false;
+          disableDigit();
+        }
+        const specialCheckbox = document.getElementById('specialCheck');
+        if (localStorage.getItem('useSpecialchar') === 'on') {
+            specialCheckbox.checked = true;
+        } else {
+            specialCheckbox.checked = false;    
+            disableSpecial(); 
+        }
+        if (localStorage.getItem('length') !== null) {
+          document.getElementById('KeyField').value = localStorage.getItem('key');
+          document.getElementById('lengthField').value = localStorage.getItem('length');
+          document.getElementById('IncludedDigits').value = localStorage.getItem('digits');
+          document.getElementById('IncludedSpecials').value = localStorage.getItem('specialChars');
+        }
+      });
+      function disableDigit() {
+        const digitField = document.getElementById('IncludedDigits');
+        const digitCheckbox = document.getElementById('digitCheck');
+        if (digitCheckbox.checked) {
+          digitField.disabled = false;
+        } else {
+          digitField.disabled = true;
+          localStorage.removeItem('useDigit');
+        }
+      }
+      function disableSpecial(){
+        const specialField = document.getElementById('IncludedSpecials');
+        const specialCheckbox = document.getElementById('specialCheck');
+        if (specialCheckbox.checked) {
+          specialField.disabled = false;
+        } else {
+          specialField.disabled = true;
+          localStorage.removeItem('useSpecialchar');
+        }
+      }
+
+</script>
+
+<div class="container">
+  <div class="passgen-title">
+      Password Generator
+  </div>
+    {{!-- <div class="row">
+        <div class="col d-grid">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".form-gen" aria-expanded="false" aria-controls="form1 form2" disabled>
+            Change Generator
+            </button>
+        </div>
+    </div> --}}
+  <div class="row justify-content-center">
+      <div class="col-12 collapse form-gen show" id="form1">
+          <div class="row form-head">
+              <h3>Basic Generator</h3>
+          </div>
+          <form action="/passgen" method="POST">
+              <div class="row" style="padding:5px">
+                  <div class="col-7">
+                      <label for="KeyField" class="form-label">Seed</label>
+                      <input type="text" class="form-control input-style" placeholder= "Be secure, stay safe!"maxlength="64" id="KeyField" name="key" aria-describedby="keyDescription">
+                      <div id="keyDescription" class="form-text">Seed used for generation</div>
+                  </div>
+                  <div class="col-5">
+                      <label for="lengthField" class="form-label">Length</label>
+                      <input type="text" inputmode="numeric" min="8" max="32" value="14" class="form-control input-style" id="lengthField" name="length" aria-describedby="lengthDescription">
+                      <div id="lengthDescription" class="form-text">Password length should be between 8 to 32 characters</div>
+                      <script>
+                          const lengthField = document.getElementById('lengthField');
+                          lengthField.addEventListener('input', function(event) {
+                              let inputValue = event.target.value;
+                              inputValue = inputValue.replace(/[^0-9]/g, '');
+                              event.target.value = inputValue;
+                          });
+                          lengthField.addEventListener('blur', function(event) {
+                              let inputValue = event.target.value;
+                              if (inputValue < 8) {
+                                  inputValue = 8;
+                              } else if (inputValue > 32) {
+                                  inputValue = 32;
+                              }
+                              event.target.value = inputValue;
+                          });
+                          lengthField.addEventListener('keydown', function(event) {
+                              if (event.key === 'Enter') {
+                                  let inputValue = event.target.value;
+                                  if (inputValue < 8) {
+                                      inputValue = 8;
+                                  } else if (inputValue > 32) {
+                                      inputValue = 32;
+                                  }
+                                  event.target.value = inputValue;
+                              }
+                          });
+                      </script>
+                  </div>
+                  <div class="col-6" style="margin: 0;">
+                      <label for="IncludedDigits" class="form-label"> Including digit(s) </label>
+                      <div class="input-group">
+                          <div class="input-group-text gap-2 input-style" style="width: 100%; background-color:rgb(212, 224, 235)">
+                              <input class="form-check-input input-style" type="checkbox" checked onchange="disableDigit()" id="digitCheck" name="useDigit">
+                              <input type="text" class="form-control input-style" aria-describedby="digits" id="IncludedDigits" value="0123456789" name="digits">
+                              <script>
+                                  const digitField = document.getElementById('IncludedDigits');
+                                  digitField.addEventListener('input', function(event) {
+                                      let inputValue = event.target.value;
+                                      inputValue = inputValue.replace(/[^0-9]/g, '');
+                                      const uniqueDigits = [... new Set(inputValue)].join('');
+                                      inputValue = uniqueDigits;
+                                      event.target.value = inputValue;
+                                  });
+                                  digitField.addEventListener('blur', function(event) {
+                                      let inputValue = event.target.value;
+                                      if (inputValue === '') {
+                                          inputValue = '0123456789';
+                                      } else {
+                                          const uniqueDigits = [... new Set(inputValue)].join('');
+                                          inputValue = uniqueDigits;
+                                      }
+                                      event.target.value = inputValue;
+                                  });
+
+                                  digitField.addEventListener('keydown', function(event) {
+                                      if (event.key === 'Enter') {
+                                          let inputValue = event.target.value;
+                                          if (inputValue === '') {
+                                              inputValue = '0123456789';
+                                          } else {
+                                              const uniqueDigits = [... new Set(inputValue)].join('');
+                                              inputValue = uniqueDigits;
+                                          }
+                                          event.target.value = inputValue;
+                                      }
+                                  });
+                              </script>
+                          </div>
+                      </div>
+                      <div id="digits" class="form-text">Digits to be included in the password</div>
+                  </div>
+              
+                  <div class="col-6" style="margin: 0;">
+                      <label for="IncludedSpecials" class="form-label">Including special characters</label>
+                      <div class="input-group">
+                          <div class="input-group-text gap-2 input-style" style="width: 100%; background-color:rgb(212, 224, 235)">
+                              <input class="form-check-input input-style" type="checkbox" checked onchange="disableSpecial()" id="specialCheck" name="useSpecialchar">
+                              <input type="text" class="form-control input-style" aria-describedby="digits" id="IncludedSpecials" value="@!#$%^&*()-=+?" name="specialChars">
+                              <script>
+                                  const specialField = document.getElementById('IncludedSpecials');
+                                  specialField.addEventListener('input', function(event) {
+                                      let inputValue = event.target.value;
+                                      inputValue = inputValue.replace(/[^@!#$%^&*()-=+?]/, '');
+                                      event.target.value = inputValue;
+                                  });
+                                  specialField.addEventListener('blur', function(event) {
+                                      let inputValue = event.target.value;
+                                      if (inputValue === '') {
+                                          inputValue = '@!#$%^&*()-=+?';
+                                      }
+                                      event.target.value = inputValue;
+                                  });
+                                  specialField.addEventListener('keydown', function(event) {
+                                      if (event.key === 'Enter') {
+                                          let inputValue = event.target.value;
+                                          if (inputValue === '') {
+                                              inputValue = '@!#$%^&*()-=+?';
+                                          }
+                                          event.target.value = inputValue;
+                                      }
+                                  });
+                              </script>
+                          </div>
+                      </div>
+                      <div id="special" class="form-text">Special characters to be included in the password</div>
+                  </div>
+                </div>
+              <div class="row justify-content-end" style="padding:5px">
+                  <button class="col-2 btn btn-primary" type="submit"> Generate </button>
+              </div>
+          </form>
+        </div>  
+    </div>
+  <br> 
+  <div class="row justify-content-center">
+      <div class="col-12 result-gen">
+        <div class="row result-head">
+          <h3> Result</h3>
+        </div>
+        <label for="password" style="padding: 10px;">Your generated password</label>
+        {{!-- TODO: Add that newpasspage --}}
+        <form action="/analyze" method="post" class="row gap-2 justify-content-center">
+          <div class="col-5">
+            <input type="text" class="form-control input-style" style="font-size: large;" value="{{password}}" maxlength="32" id="password" name="password" aria-describedby="keyDescription">
+          </div>
+          <div class="col-2 d-grid">
+            <button class="btn btn-primary btn-block" type="button" onclick="copyPassword()" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copied!">
+              Copy
+            </button>
+            <script>
+              function copyPassword() {
+                const passwordField = document.getElementById('password');
+                navigator.clipboard.writeText(passwordField.value);
+              }
+            </script>
+          </div>
+          <div class="col-2 d-grid">
+            <button class="btn btn-primary btn-block" {{!--type="submit" --}}> Analyse
+            </button>
+          </div>
+        </form>
+      </div>
+  </div> 
+</div>

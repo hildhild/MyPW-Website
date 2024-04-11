@@ -1,0 +1,55 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    /* font-family: Roboto; */
+    padding-inline: 50px;
+}
+
+.form-head{
+  background-color: #009EE2;
+  border-radius: 10px;
+  border-color: rgb(27, 221, 251);
+}
+.btn-primary{
+  border-radius: 15px;
+  background-color:  #009EE2;
+}
+.passgen-title{
+    width: 456px;
+    height: 60px;
+    text-align: left;
+    color: black;
+    font-size: 38px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.form-gen{
+    background-color: aliceblue;
+    border-radius: 10px;
+    border-color: #0D99FFB2;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.input-style{
+    border-color: #0D99FFB2;
+    border-radius: 5px;
+}
+
+.result-gen{
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    /* transition: 1s ; */
+}
+
+.result-head{
+    background-color: #009EE2;
+    border-radius: 10px;
+    border-color: rgb(27, 221, 251);
+}

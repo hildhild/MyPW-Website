@@ -1,0 +1,83 @@
+<style>
+    .circle {
+        background-color: #33A0F2;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        width: 150px;
+        height: 150px;
+    }          
+
+    .info-container {
+        margin-top: 30px;
+    }
+
+    .info-container .row1{
+        margin-bottom: 50px;
+    }
+
+    .info-container .row1 strong {
+        background-color: #E6E0E9;
+        border-radius: 10px;
+        padding: 5px 10px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .info-container .row2 li {
+        list-style: none;
+    }
+
+    .info-container .row2 a{
+        text-decoration: none;
+    }
+
+    .editprofile {
+        text-align: right;
+        width: 100%;
+    }
+
+   
+</style>
+<div class="info-container">
+    <div class="container-fluid row row1">
+        <div class="col-lg-3">
+            <img src="https://img.hoidap247.com/picture/question/20210531/large_1622431721191.jpg?v=0" alt="Avatar" class="avatar circle">
+        </div>
+        <div class="col-lg-9">
+            <br><br><br>
+            <strong>{{currentAdminInfo.[0].firstName}} {{currentAdminInfo.[0].lastName}}</strong>
+        </div>
+    </div>
+    <div class="row container-fluid row2">
+        <section class="node_category card d-inline-block w-100 mb-3 col-lg-12">
+            <div class="card-body">
+                <h3 class="lead">User information</h3>
+                <ul>
+                    <li class="editprofile"><span><a href="" onclick="editProfile()">Edit profile</a></span></li>
+                    <li class="contentnode"><dl><dt>UserID</dt><dd><a href="">{{currentAdminInfo.[0].username}}</a></dd></dl></li>
+                    <li class="contentnode"><dl><dt>Email</dt><dd><a href="">{{currentAdminInfo.[0].email}}</a></dd></dl></li>
+                    <li class="contentnode"><dl><dt>Country</dt><dd>{{currentAdminInfo.[0].country}}</dd></dl></li>
+                </ul>
+            </div>
+        </section>
+        <section class="node_category card d-inline-block w-100 mb-3 col-lg-12">
+            <div class="card-body">
+                <h3 class="lead">Login</h3>
+                <ul>
+                    <li class="contentnode"><dl><dt>First access</dt><dd>{{currentAdminInfo.[0].firstAccess}}&nbsp;</dd></dl></li>
+                    <li class="contentnode"><dl><dt>Last access</dt><dd>{{currentAdminInfo.[0].lastAccess}}&nbsp;</dd></dl></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript"> 
+    function editProfile(){
+        
+    }
+</script>

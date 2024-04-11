@@ -1,0 +1,745 @@
+commit 1393bcd7a0fcbaf6e40643fd7bde15020b036e0f
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Mon Jan 1 23:27:55 2024 +0700
+
+    Fix broken button
+
+commit 79db85f007a5d5b4cefd378a7f3c3844679795a1
+Merge: fa89acb 11d8151
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Mon Jan 1 22:59:35 2024 +0700
+
+    Finalize some button
+
+commit fa89acbaf14c2b0de5c8675148411bcd91c7b2c9
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Mon Jan 1 22:58:39 2024 +0700
+
+    Fixing button
+
+commit 11d8151e68d8ed4eadc4db1187dc42e7a8e789bb
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Jan 1 22:57:03 2024 +0700
+
+    fix patch password
+
+commit 48ca279f036e2c16800e04c95a7a2e534f408384
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Mon Jan 1 22:32:59 2024 +0700
+
+    Add passinfo
+
+commit ca9ad3c208c5aa23c42682aeb1998c9339f86efd
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Jan 1 21:20:01 2024 +0700
+
+    add password edit
+
+commit b374e12e0b070c484805f8f536f54ec8d75de325
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Jan 1 20:52:56 2024 +0700
+
+    fix in userinfo in admin
+
+commit e281c8c223a0d3078d7321ee139a6773f5d5c28b
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Jan 1 20:52:26 2024 +0700
+
+    fix userinfo view
+
+commit 91c75bb643ab096d21d6801cba5552d93e589d6b
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Jan 1 20:50:32 2024 +0700
+
+    add logout
+
+commit 6f5d98981d431deaef975d8a163a9f39d0abd26e
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Jan 1 15:54:10 2024 +0700
+
+    add modify feedback from user
+
+commit ec1da86fb080d3ce44f4653e668f25d32ed6ff65
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Dec 28 05:02:03 2023 +0700
+
+    +add pass info
+
+commit 517b6fd4f98749fd8a3d0df2a4db6e089a182693
+Merge: 995d5e1 ea28f00
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Dec 28 02:13:14 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit 995d5e1deb6d049d5640a0fed0fc9971dab21679
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Dec 28 02:13:04 2023 +0700
+
+    i dont even know what i add
+
+commit ea28f0010751332bd6226d1ebae47f5a171c2bee
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Wed Dec 27 20:48:28 2023 +0700
+
+    Update checkuserlist.hbs
+
+commit a9242c74a9bbe2de66b03d3ae88637875f5f80d9
+Merge: c940947 7000302
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Dec 27 18:52:43 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit c940947cc3a11f58c894858d6dbab989a427db16
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Dec 27 18:52:41 2023 +0700
+
+    +add delete and add password from user
+
+commit 700030208516d60b6108a11c8e0a3078e62fc4dd
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Wed Dec 27 16:05:28 2023 +0700
+
+    *fix some feedback view
+
+commit 4614f3caff2bfb09c65692c3d28d0eeaa7cf406f
+Merge: f5875b8 f8ad67a
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Dec 27 10:03:23 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit f5875b86eefb2a423e72bd27abdd0c444ad757ee
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Dec 27 10:02:43 2023 +0700
+
+    add view for home and passman
+
+commit f8ad67a624a6da8bf90169e45d547badb806ff5f
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Fri Dec 22 19:49:33 2023 +0700
+
+    Add mock data, add password analyze
+
+commit 65ca4a8049a2577f62b95e584ca4478ea2823c68
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Fri Dec 22 03:18:21 2023 +0700
+
+    admin feedback filter
+
+commit 7e2afd34950cd0bc917eae49936d641116778759
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Fri Dec 22 02:34:34 2023 +0700
+
+    user list filter
+
+commit 62799748e5feb97d96ae424633e179d1c5dd07f9
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Fri Dec 22 01:25:19 2023 +0700
+
+    user & admin info view
+
+commit 2cfbca5334b7f12eab7ba6398146655c4ecb123b
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Dec 21 21:06:55 2023 +0700
+
+    *user list View
+
+commit 690a873a7666011128ef6eede97c323aa9aad632
+Merge: 639a91f 15a4b78
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Dec 21 19:41:57 2023 +0700
+
+    Merge branch 'PhuKhang'
+
+commit 639a91f731a4736ac055411b08369351c0ee33ea
+Merge: c263f25 3745467
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Dec 21 19:40:36 2023 +0700
+
+    Merge remote-tracking branch 'origin/PhuKhang2'
+
+commit c263f25162d729a0ccd0275990752b7cee9946b0
+Merge: 6925741 5986363
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Mon Dec 18 11:41:16 2023 +0700
+
+    Merge branch 'main' into Tuelam
+
+commit 6925741db3c27b88a2fd281211f6e549fb8536ac
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Mon Dec 18 11:40:45 2023 +0700
+
+    Change readme
+
+commit 673b04604a6470246ae81e85422d2c5f04172669
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Thu Dec 14 12:48:40 2023 +0700
+
+    Add passanalyze and passgenerate routes and controllers
+
+commit 5986363573762dcad1717e7d4a383f4c78527580
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Dec 12 15:09:23 2023 +0700
+
+    add data for user homepage
+
+commit 92869de55d8c635c70767481300572ee3a414ef1
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Dec 12 12:16:41 2023 +0700
+
+    add data to homepage
+
+commit f6b849b67893d8311b656e0bfead8f993da3cd9e
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Mon Dec 11 05:46:53 2023 +0700
+
+    Admin Feedback View
+
+commit 3f886951d6529ce62248632dc7dcbbbe17ea12b2
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sun Dec 10 14:51:28 2023 +0700
+
+    Passgen and stuff
+
+commit 85a9c53685e840fdf30262226960967d46711248
+Merge: ac6bc7d 2bb41a3
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sun Dec 10 03:23:18 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit 2bb41a306b70127d68d3a384e6bf4b409b3573fb
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sat Dec 9 20:47:23 2023 +0700
+
+    Finish passgen page
+
+commit 88ee94d149fae342d154fe56044b3f9732a0f159
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sat Dec 9 17:00:38 2023 +0700
+
+    Fix passgen page
+
+commit d36904deea5b0a5273ba57c8df2506fefc0b27f9
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Fri Dec 8 10:01:32 2023 +0700
+
+    add session to authorzied user and admin
+
+commit 801556253de30cfb44d879fd25b2f7a5e20e3f83
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Dec 7 15:13:23 2023 +0700
+
+    fix login
+
+commit 3745467e4dcb691ed3749ab01c55dd7b3c524e76
+Merge: f1413a6 a0218e0
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Thu Dec 7 13:24:19 2023 +0700
+
+    TestError
+
+commit f1413a6b4f69bbe22d81de4cc8c0c50a1d5edaf7
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Thu Dec 7 13:16:13 2023 +0700
+
+    Test
+
+commit a0218e0f07b8b2d5d2365dc02919ec23d5cbe8cd
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Dec 7 09:26:36 2023 +0700
+
+    add get acc info from db into admin homepage & remake sql query
+
+commit 2495414e092eb4d4935e1af5f15cccd8a8385788
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Dec 6 10:36:18 2023 +0700
+
+    fix a little bit about login
+
+commit de52cd97d3784d557b217d344f8f77bce9da1728
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Dec 6 09:58:26 2023 +0700
+
+    add login (without token)
+
+commit 15a4b785d603f0e1ab292966eee6993d7dd39244
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Tue Dec 5 20:16:07 2023 +0700
+
+    Get error
+
+commit c86297150ae06f448dce68c5d7635c3d329f6fa0
+Author: Quan Nguyen <minhquan2nd@gmail.com>
+Date:   Tue Dec 5 16:11:38 2023 +0700
+
+    Update README.md
+
+commit 1463b08d94f8097a47d25f8aa627d720084c3813
+Author: Quan Nguyen <minhquan2nd@gmail.com>
+Date:   Tue Dec 5 15:47:02 2023 +0700
+
+    Update README.md
+
+commit e52b6f5163e78781ea7201f0026e088f50c69851
+Author: Quan Nguyen <minhquan2nd@gmail.com>
+Date:   Mon Dec 4 20:44:38 2023 +0700
+
+    Update README.md
+
+commit 2651acb2821fb6c5cbf49dff716319ceb6852e86
+Author: Quan Nguyen <minhquan2nd@gmail.com>
+Date:   Mon Dec 4 20:35:05 2023 +0700
+
+    Update README.md
+
+commit eaa2206757c59b158069e646ae470069fb86b20d
+Author: Quan Nguyen <minhquan2nd@gmail.com>
+Date:   Mon Dec 4 20:34:55 2023 +0700
+
+    Update README.md
+
+commit 2ddcfef5f3e968c542cfd7c7799b75eed7ded2da
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Dec 4 20:33:40 2023 +0700
+
+    add readne and dotenv
+
+commit fa177292a5fa779fd9292f889fe68d6e8bf8a269
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Mon Dec 4 18:34:06 2023 +0700
+
+    Get error
+
+commit 4b51cb20b3e002e091491af1e1d0e3f711165f90
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Mon Dec 4 18:25:05 2023 +0700
+
+    Get error
+
+commit 608cea29060361bb1e76d76f15697716a8704503
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Mon Dec 4 17:15:49 2023 +0700
+
+    Update
+
+commit daee1edc1c62ae9d35677307f0fb8b3675ece3ac
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Sun Dec 3 16:40:30 2023 +0700
+
+    add isAdmin attribute to account
+
+commit 57e909a8a4ba246f3d89c56092e3f057b24040cb
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Sun Dec 3 16:32:48 2023 +0700
+
+    add query entity, fake data, test get
+
+commit ac6bc7dbca5a4c265d04d6259af2c91f980ebc25
+Merge: f124c80 134660f
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sun Dec 3 14:10:22 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit 134660fc5e720838e86ef2664e3e468b3aebe460
+Merge: 7f1fd55 61c6fcb
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Fri Dec 1 22:01:32 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit 7f1fd554efd48ca74dfee10725f417ad4c36f9a4
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Fri Dec 1 22:01:30 2023 +0700
+
+    add create db query and connect to local db
+
+commit f124c804b9c9b0c8880dad5532d43b2d0ad27508
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Nov 30 19:56:07 2023 +0700
+
+    *minor fix
+
+commit a75ea552ad1f64b94b0e7c2e730d16e16405ce96
+Merge: ada9c6e 61c6fcb
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Nov 30 19:15:34 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit 61c6fcba653b404797c34ff4edbcc6a1ca532c5c
+Merge: 242fc6f 23f7f42
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Wed Nov 29 19:00:02 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit 242fc6fbd93b136c2f139d7304c8d676028dc6e5
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Wed Nov 29 18:59:38 2023 +0700
+
+    Update Passman+PassInfo
+
+commit 23f7f424867eb239a28af1f491b8283166480f11
+Merge: 77a3b2c a0fe0e2
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Nov 28 15:33:27 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit 77a3b2cf700459738801e814b19663374c3897f8
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Nov 28 15:33:23 2023 +0700
+
+    add sqlserver intergration (without db conf) + clean folder and url (from admin- to admin/)
+
+commit ada9c6ede1538efbc60f34ee9bff31bf94b2b306
+Merge: d41f0e8 a0fe0e2
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Tue Nov 28 14:58:22 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit a0fe0e2df8960d62c74247b5e6f45509485192f6
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sun Nov 26 12:01:04 2023 +0700
+
+    fixed Gen
+
+commit d41f0e83c772508cc25bd3280d6131abaacbf67a
+Merge: bd3079b 6208091
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sun Nov 26 04:11:29 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit bd3079bc56517203e8008fd85994e036a7ee30d8
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sun Nov 26 04:10:09 2023 +0700
+
+    +2fa mail
+
+commit 620809109af60ba7e9e67219102d474cfa35cad9
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sun Nov 26 04:09:43 2023 +0700
+
+    fixed a stupid bug
+
+commit 1c0f9f7c0fd2ab9b235669604cc515808d44d36f
+Merge: 19ee202 f4a4d08
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sun Nov 26 03:46:02 2023 +0700
+
+    Merge branch 'Tuelam'
+
+commit f4a4d0880fd26afdd2e71d7265e17e585eae43e6
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sun Nov 26 03:40:15 2023 +0700
+
+    Added session, fixed homepage, added passgen
+
+commit e574e8ac78c1bb684280878d0dd91b5e8e0118c9
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Sat Nov 25 23:23:48 2023 +0700
+
+    Fixed homepage
+
+commit 19ee2029aec70c83d3d451681ac850f8c1d85b15
+Merge: 75b7283 7f7c924
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sat Nov 25 15:27:43 2023 +0700
+
+    Merge remote-tracking branch 'origin/Huy'
+
+commit 75b72838c909e156d54dafcea77b07b7d863a978
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Tue Nov 21 22:56:28 2023 +0700
+
+    Update PassInfo
+
+commit cd8f0a5bd31fe1df8407622647c069c4f56fcdd9
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sat Nov 18 02:57:56 2023 +0700
+
+    *adminFeedback UI
+
+commit 3fd4460a6ec073d368fec27f4c72022f58708d73
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sat Nov 18 01:38:29 2023 +0700
+
+    * admin-homepage
+
+commit 7f7c924a32e693cdfa2bb97ed79fa743dcaada7c
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Fri Nov 17 20:47:54 2023 +0700
+
+    Update adminFeedback.hbs
+
+commit 27edca4c86b417f02503e439afe88c40afd9fafc
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Fri Nov 17 19:57:07 2023 +0700
+
+    Create adminFeedback.hbs
+
+commit 58bb48a769d1770a067e5a41d60ffb46460cfbd2
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Fri Nov 17 14:28:53 2023 +0700
+
+    add admin homepage (not done)
+
+commit ac75aa50cb8e7221aa9aa5ee255f6eba70e46631
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Tue Nov 14 15:17:57 2023 +0700
+
+    Update checkuserinfo.hbs
+
+commit d0faef0643b12fd76ae29bbf9252174a5b6f48d4
+Merge: cc8e209 59f8206
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Mon Nov 13 00:25:08 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit cc8e2095b5a788754cdb3c9dbc4b40be417eb11b
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Mon Nov 13 00:24:57 2023 +0700
+
+    Update Pass Info
+
+commit 59f820695e7ccdef6163bdf2ac5b3ce97671999e
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Sun Nov 12 16:31:02 2023 +0700
+
+    + Update check frequence
+
+commit 6acf70c9fb3671bbfc11bedd3e19c2a924df4156
+Merge: 5203f8a f691c46
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Sat Nov 11 23:02:33 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit 5203f8a7da1bf000298609f6dd447fcbab4e6a67
+Author: Phạm Khang <ppkhang285@gmail.com>
+Date:   Sat Nov 11 23:01:44 2023 +0700
+
+    Update Passman
+
+commit f691c4634dbdd4812a826c7c79f7772b6f91efd6
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Sat Nov 11 22:25:39 2023 +0700
+
+    + Setup route to check frequence
+
+commit cd0b51f340c4defcd660a0e882b0c518000d209f
+Merge: ef0d0f1 b88bc75
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Sat Nov 11 22:19:03 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit b88bc75a5b62085d7e730f071f8cbd6c7a5907b1
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Sat Nov 11 22:15:36 2023 +0700
+
+    + Add check user list info
+
+commit 27234ce67acc3d0f982b590fe8bdae05bdeef2ec
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Fri Nov 10 22:34:59 2023 +0700
+
+    + Add check user list
+
+commit ef0d0f15f4ff296ee454b2cee42c14acc64a6836
+Merge: e1ec6cd 92e20d3
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Fri Nov 10 13:12:44 2023 +0700
+
+    Merge branch 'main' into origin/Tan
+
+commit 92e20d36e1e81f3e19465623bd94411a83dada9b
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Fri Nov 10 08:03:38 2023 +0700
+
+    Create DownArrow.png
+
+commit 77bb50da88e65631e4b7a5f681d1aa001ede4dfc
+Author: haiphan <haiphan.230903@gmail.com>
+Date:   Fri Nov 10 08:02:59 2023 +0700
+
+    + Add admin feedback (in userlist.hbs)
+
+commit e1ec6cd8d1d59b3b5f70991acc03d0dba151d3bd
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Nov 9 22:11:25 2023 +0700
+
+    new password & verification panel
+
+commit de722c4a38e807553ff7114f780fef559f81ddda
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Nov 9 20:35:02 2023 +0700
+
+    2fa
+
+commit 3d798511a29fe1406ed30e42b5aa3906fad7fdc0
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Nov 9 19:30:23 2023 +0700
+
+    remove d-flex and add overflow-y to admin main content
+
+commit f5250741d228e660cb0f724d68cd8cd5db479b93
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Thu Nov 9 15:32:55 2023 +0700
+
+    add overflow-y to main
+
+commit eed246f66f749debbcc814619475d7d96286fbf5
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Thu Nov 9 11:34:00 2023 +0700
+
+    Update userinfo.hbs
+
+commit 67c28e598708cc57d01ef2cd1c3c5905c2c5b670
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Thu Nov 9 08:58:29 2023 +0700
+
+    Update main.hbs - remove class d-flex of #content
+
+commit 18533ea1a4913c04ba12129d7c0ade2838dc0940
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Nov 8 10:13:26 2023 +0700
+
+    Add admin page redirect
+
+commit 8b25f425a504c727d1cfce78a6460c74a9153d59
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Nov 8 09:55:09 2023 +0700
+
+    add admin page "user manager"
+
+commit c9cc0012e1f41f472f18b2313605da8b245eb33f
+Merge: 3989637 dc73a15
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Wed Nov 8 09:38:17 2023 +0700
+
+    Merge branch 'TueLam'
+
+commit 3989637691aab56455d08ee0a1749ab49ba78a53
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Nov 6 20:17:23 2023 +0700
+
+    add redirect to admin homepage
+
+commit addac44600c6e7003ed5e55b605a76ecb853ffc4
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Sat Oct 28 00:41:47 2023 +0700
+
+    Update feedback.hbs
+
+commit 138f275a33ef4fbd8b440c3b25a39205f90b80b4
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Fri Oct 27 09:38:33 2023 +0700
+
+    Update feedback.hbs
+
+commit 30a18a87cf95d784d298ac19d84ca19d0cf5e60c
+Author: Huy Lê Đình <113029748+hildhild@users.noreply.github.com>
+Date:   Thu Oct 26 13:36:39 2023 +0700
+
+    Update feedback.hbs
+
+commit fab02b848aadab5f3678721f99daea3b49cd8e24
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Thu Oct 26 00:46:52 2023 +0700
+
+    + set up 2fa
+
+commit dc73a152e3586b6062091cf55a93a0b56439a97d
+Author: Cyese <87186561+Cyese@users.noreply.github.com>
+Date:   Wed Oct 25 16:02:00 2023 +0700
+
+    Add homepage
+
+commit de6dc50984bad66ecf49b372996a50412e502119
+Merge: 04ad2c3 1de23e6
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Oct 24 15:59:00 2023 +0700
+
+    Merge branch 'main' of https://github.com/QuanNguyen-1st/MyPW
+
+commit 04ad2c30b4277855fb971828db4c08d2b756839b
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Oct 24 15:58:40 2023 +0700
+
+    login interface
+
+commit 1de23e6f74537a4717d448e3a0978dc464717b68
+Author: Nguyễn Thái Tân <nguyenthaitan02@gmail.com>
+Date:   Tue Oct 24 14:49:50 2023 +0700
+
+    *feedback frontend
+
+commit 805ce1019ad0fa633eb323722e4138cb01ba0e19
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Oct 23 11:34:24 2023 +0700
+
+    add background image for user authentication (login, register, ...)
+
+commit db2245765b1e00ada679fb9f85ef78b416118037
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Mon Oct 23 09:21:00 2023 +0700
+
+    add link maneuver (homepage, passgen, passman, feedback)
+
+commit 0ff561855e91c589492de084358eae0912355ec4
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Sun Oct 22 21:28:33 2023 +0700
+
+    add sidebar
+
+commit 805ee2a25ddb41b5baa7fef0894fabc971130f9e
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Sun Oct 22 19:36:24 2023 +0700
+
+    make topbar
+
+commit 3e90389a3a02321e1d41126a12ee513b3ccde208
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Sun Oct 22 19:34:56 2023 +0700
+
+    Revert "make topbar"
+    
+    This reverts commit e2e24f1323a0ecee0c37e45d6be6620840911bbb.
+
+commit e2e24f1323a0ecee0c37e45d6be6620840911bbb
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Sun Oct 22 19:23:32 2023 +0700
+
+    make topbar
+
+commit e94c6a42578690c891432179f84a3d91668d57a9
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Tue Oct 17 08:20:55 2023 +0700
+
+    add 'sequelize' dependency
+
+commit 44a145b62d84a4a777d126e8b0a9d905169d0aca
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Fri Oct 13 13:52:22 2023 +0700
+
+    init web (expressjs, template engine express-handlebars) and make example
+
+commit 7ff2356382e09d3169a8673957947d5bb33747b5
+Author: Quan Nguyen <119392873+QuanNguyen-1st@users.noreply.github.com>
+Date:   Fri Oct 13 13:48:58 2023 +0700
+
+    init web (expressjs, template engine express-handlebars) and make examples
+
+commit 756a583123dee1b4cee1f6eb63c1e1fee720fad2
+Author: Quan Nguyen <minhquan2nd@gmail.com>
+Date:   Fri Oct 13 13:09:38 2023 +0700
+
+    Initial commit

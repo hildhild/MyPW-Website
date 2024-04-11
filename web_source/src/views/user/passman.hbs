@@ -1,0 +1,144 @@
+<link rel="stylesheet" href="/css/passman.css">
+<style>
+    .form-row {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+<div class="container">
+    <div class="passman-title">
+        Password Manager
+    </div>
+    <div class="tools">
+        <div class="search-bar">
+            <input type="text" name="search" id="search-text" placeholder="Search">
+            <img src="/img/search.png" alt="search icon">
+        </div>
+        <div class="button-container">
+            <button class="export-btn">EXPORT</button>
+            <button class="create-btn" data-bs-toggle="modal" data-bs-target="#addPassModal">CREATE</button>
+        </div>
+    </div>
+    <div class="table-container">
+        <table class="password-table">
+            <thead>
+                <tr>
+                    <th style="width: 5%;">STT</th>
+                    <th>Website</th>
+                    <th style="width: 15%;">Password</th>
+                    <th style="width: 25%;">Last access</th>
+                    <th style="width: 8%;">Active</th>
+                    <th style="width: 8%;">Action</th>
+                    <th style="width: 8%;">Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each passwordItems}}
+                <tr>
+                    <td>{{math @index "+" 1}}</td>
+                    <td style="test-align: left;">{{url}}</td>
+                    <td>••••••</td>
+                    <td>{{lastAccessDay}}</td>
+                    <td> <input type="checkbox" onclick="return false;"
+                        {{#if active}}
+                            checked
+                        {{/if}}
+                    ></td>
+                    <td> 
+                        <button class="edit-btn"></button>
+                        <button class="delete-btn" data-bs-toggle="modal" data-bs-target="#deletePassModal" data-bs-delete="{{url}}"></button>
+                    </td>
+                    <td><a href="/passman/{{url}}/passinfo" style="text-decoration:none;color:black;">Detail</td></a>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-end" id="password-pagination"></ul>
+        </nav>
+    </div>
+    
+</div>
+<!-- Modal -->
+<div class="modal fade" id="addPassModal" tabindex="-1" role="dialog" aria-labelledby="addPassModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="addPassModalLabel">Create new password</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <!--<span aria-hidden="true">&times;</span>-->
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <input id="" name="add_website" type="text" class="form-control" placeholder="Website">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <input id="" name="add_password" type="text" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deletePassModal" tabindex="-1" role="dialog" aria-labelledby="deletePassModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="bi bi-person-check-fill" style="font-size:36px;"></i>
+                </div>
+                <h5 class="text-center mt-3">Are you sure?</h5>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3">
+                        <button id="btn-delete-pass" type="button" class="btn btn-outline-success btn-block" id="btn-delete-task" style="width: 100%;">Confirm</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-danger btn-block" data-bs-dismiss="modal" style="width: 100%;">Close</button>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{!--  script for Display --}}\
+<form id="delete-pass-form" method="post">
+	<input 
+</form>
+<script type="text/javascript">
+function handleDetailBtnClick(id){
+    // Set Cookie openPasswordID to passinfo
+    document.cookie = "openPasswordID="+id;
+    // Go to PassInfo
+    window.location.assign("/passman/passinfo");
+}
+// Example data
+        var deleteId;
+        var deleteBtn = document.getElementById('btn-delete-pass');
+        var deleteForm = document.forms['delete-pass-form'];
+        var deleteModal = document.getElementById('deletePassModal');
+
+        deleteModal.addEventListener('show.bs.modal', function(event) {
+            var btn = event.relatedTarget;
+            deleteId = btn.getAttribute('data-bs-delete');
+            console.log(deleteId);
+        });
+
+        deleteBtn.onclick = function() {
+            deleteForm.action = '/passman/' + deleteId + '?_method=delete';
+            deleteForm.submit();
+        }
+</script>

@@ -1,0 +1,11 @@
+.sidebar-item {
+    border-radius: 25px;
+}
+
+.sidebar-item:hover {
+    background: rgb(222, 215, 232);
+}
+
+.sidebar-item.active {
+    background: #E8DEF8;
+}

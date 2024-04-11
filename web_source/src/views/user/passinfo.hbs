@@ -1,0 +1,167 @@
+<link rel="stylesheet" href="/css/passinfo.css">
+<div class="container">
+		<div class="passinfo-title">
+				Password Detail
+		</div>
+		<div class="body">
+				<div class="func-container">
+						<div class="detail-container">
+								<label for="detail">Mật khẩu chi tiết</label>
+								<input type="text" name="" id="detail" value="{{passInfo.password}}" readonly>
+
+								<label for="create-date">Ngày tạo</label>
+								<input type="text" name="" id="create-date" value="{{passInfo.dateCreate}}" readonly>
+
+								<label for="expiration-date">Ngày hết hạn</label>
+								<input type="text" name="" id="expiration-date" value="{{passInfo.dateExpire}}" readonly>
+
+								<label for="create-time">Thời gian tạo</label>
+								<input type="text" name="" id="create-time" value="{{passInfo.timeCreate}}" readonly>
+
+								<label for="expiration-time">Thời gian hết hạn</label>
+								<input type="text" name="" id="expiration-time" value="{{passInfo.timeExpire}}" readonly> 
+
+								<label for="login-apps">Website</label>
+								<input type="text" name="" id="url" value="{{passInfo.url}}" readonly> 
+						</div>
+						<div class="btn-container">
+								<button class="btn edit-btn" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>
+								<form class="btn-container"  action="/analyze" method="POST">
+									<input type="hidden" name="password" value="{{passInfo.password}}">
+									<button class="analyse-btn" type="submit">Analyse</button>
+								</form>
+						</div>
+				</div>
+				<div class="image">
+						<img src="/img/detail_img.png" alt="Password Detail">
+				</div>
+		</div>
+</div>
+
+
+{{!-- Edit modal --}}
+<div class="modal fade" id="editModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<!-- Modal body -->
+			<div class="modal-body">  
+			<form action="/passman/{{passInfo.url}}/passinfo?_method=patch" id="EditForm" method="post">
+				<div class="modalTitle" style="text-align: center;">Edit Password</div>
+				<input type="password" class="form-control" name="oldPassword" placeholder="Old Password">
+				<input type="password" class="form-control" name="newPassword" placeholder="New Password">
+				<input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password">
+				<button class="btn btn-primary" style="margin-inline:auto" type="submit" id="confirmPatchButton">Confirm</button> 
+			</form>
+			<script>
+				function validate(){
+					const EditForm = document.getElementById("EditForm");
+					if (EditForm["newPassword"].value !== EditForm["confirmPassword"].value){
+						console.log("Fail");
+						return;
+					}
+					console.log("Success");
+					EditForm.submit();
+				}
+			</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{!-- Success modal
+<div class="modal fade" id="successModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<!-- Modal body -->
+			<div class="modal-body">
+				<div class="modalTitle" style="text-align: center;">Success</div>
+				<div class="notice">Password updated successfully!</div>
+				<button class="btn btn-primary" style="margin-inline:auto" data-bs-dismiss="modal">OK</button>        
+			</div>
+		</div>
+	</div>
+</div>
+ --}}
+
+
+{{!-- Fail modal --}}
+<div class="modal fade" id="failModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<!-- Modal body -->
+			<div class="modal-body">
+				<div class="modalTitle" style="text-align: center;">Fail</div>
+				<div class="notice"> new password and confirm password must be the same! </div>
+				<button class="btn btn-primary" style="margin-inline:auto" data-bs-dismiss="modal">OK</button>        
+			</div>
+		</div>
+	</div>
+</div>
+
+{{!-- Verify Modal --}}
+<div class="modal fade" id="verificationModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal body -->
+      <div class="modal-body">
+                <div class="modalTitle" style="text-align: center;">Verification Code</div>
+                <div class="notice">We have sent the verification code to your email address</div>
+                <div class="inputs d-flex flex-row justify-content-center mt-2 mb-2" id="otp">
+                    <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> 
+                    <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> 
+                    <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> 
+                    <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> 
+                </div>
+                <button class="btn btn-primary" style="margin-inline:auto" >OK</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Analyse Modal --}}
+<div class="modal fade" id="analyseModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body">
+                <div class="modalTitle" style="text-align: center;">Analyse Password</div>
+                <div class="analyseRes"></div>
+                <button class="btn btn-primary" style="margin-inline:auto" data-bs-target="#analyseModal" data-bs-toggle="modal" data-bs-dismiss="modal">OK</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Scripty for OTP press vent --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        function OTPInput() {
+            const inputs = document.querySelectorAll('#otp > *[id]');
+            for (let i = 0; i < inputs.length; i++) { 
+                inputs[i].addEventListener('keydown', function(event) { 
+                    if (event.key==="Backspace" ) { 
+                        inputs[i].value='' ; 
+                        if (i !==0) inputs[i - 1].focus(); 
+                    } 
+                    else { 
+                        if (i===inputs.length - 1 && inputs[i].value !=='' ) { 
+                            return true; 
+                        } 
+                        else if (event.keyCode> 47 && event.keyCode < 58) { 
+                            inputs[i].value=event.key; 
+                            if (i !==inputs.length - 1) inputs[i + 1].focus(); 
+                            event.preventDefault(); 
+                        } 
+                        else if (event.keyCode> 64 && event.keyCode < 91) { 
+                            inputs[i].value=String.fromCharCode(event.keyCode); 
+                            if (i !==inputs.length - 1) inputs[i + 1].focus(); 
+                            event.preventDefault();
+                        }
+                    } 
+                });
+            } 
+        } 
+        OTPInput();
+    });
+</script>

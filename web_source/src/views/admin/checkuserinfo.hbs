@@ -1,0 +1,179 @@
+﻿<style>
+    .user-list-back-button {
+        align-items: center;
+        justify-items: center;
+        height: 50px;
+        width: 160px;
+        background-color: #33A0F2;
+        border-radius: 20px;
+        border: none;
+        text-align: center;
+    }
+
+    .circle {
+        background-color: #33A0F2;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        width: 150px;
+        height: 150px;
+    }
+
+    .info-container {
+        margin-top: 30px;
+    }
+
+        .info-container .row1 {
+            margin-bottom: 50px;
+        }
+
+            .info-container .row1 strong {
+                background-color: #E6E0E9;
+                border-radius: 10px;
+                padding: 5px 10px;
+                width: 80%;
+                text-align: center;
+            }
+
+        .info-container .row2 li {
+            list-style: none;
+        }
+
+        .info-container .row2 a {
+            text-decoration: none;
+        }
+
+    .editprofile {
+        text-align: right;
+        width: 100%;
+    }
+
+    .enable-text {
+        color: lawngreen;
+    }
+
+    .enable-btn {
+        width: 70px;
+        height: 30px;
+        background: #56B8FF;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 29px;
+        /* or 91% */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #FFFFFF;
+    }
+</style>
+
+{{#each userInfoItem}}
+<div class="info-container">
+    <div class="container-fluid row row1">
+        <div class="col-lg-3">
+            <img src="https://img.hoidap247.com/picture/question/20210531/large_1622431721191.jpg?v=0" alt="Avatar" class="avatar circle">
+        </div>
+        <div class="col-lg-6">
+            <br><br><br>
+            <strong>{{firstName}} {{lastName}}</strong>
+        </div>
+        <div class="col-lg-3">
+            <br><br>
+            <a href="/admin/user-list/check-user-list">
+                <button type="button" class="user-list-back-button" onclick="">
+                    <p style=" font-size: 24px; color: white; font-weight: 600; margin: 0;">Back</p>
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="row container-fluid row2">
+        <section class="node_category card d-inline-block w-100 mb-3 col-lg-12">
+            <div class="card-body">
+                <h3 class="lead">User information</h3>
+                <ul>
+                    <li class="contentnode"><dl><dt>UserID</dt><dd><a href="">{{username}}</a></dd></dl></li>
+                    <li class="contentnode"><dl><dt>Email</dt><dd><a href="">{{email}}</a></dd></dl></li>
+                    <li class="contentnode"><dl><dt>Country</dt><dd>{{country}}</dd></dl></li>
+                    {{!-- <li class="contentnode"><dl><dt>Today access</dt><dd>{{}}</dd></dl></li> --}}
+                    <li class="contentnode"><dl><dt>Total access</dt><dd>{{totalAccess}}</dd></dl></li>
+                    <li class="contentnode">
+                        <dl>
+                            <dt>Enable</dt>
+                            <dd class="enable-text">ON</dd>
+                            <dd class="enable-btn" type="button" onclick="setModalText()" data-bs-toggle="modal" data-bs-target="#exampleModal">Disable</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="node_category card d-inline-block w-100 mb-3 col-lg-12">
+            <div class="card-body">
+                <h3 class="lead">Login</h3>
+                <ul>
+                    <li class="contentnode"><dl><dt>First access</dt><dd>{{firstAccess}}&nbsp;</dd></dl></li>
+                    <li class="contentnode"><dl><dt>Last access</dt><dd>{{lastAccess}}&nbsp;</dd></dl></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+{{/each}}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ANNOUNCE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <!--<span aria-hidden="true">&times;</span>-->
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to disable this user?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                <button type="button" class="btn btn-primary" onclick="toggleEnableUser()" data-bs-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function toggleEnableUser() {
+        var enableBtn = document.querySelector('.enable-btn');
+        var btnText = enableBtn.textContent.trim(); // Lấy nội dung hiện tại của nút
+        var enableText = document.querySelector('.enable-text');
+
+        if (btnText === 'Disable') {
+            enableBtn.textContent = 'Enable';
+            enableText.textContent = 'OFF';
+            enableText.style.color = 'red';
+        }
+        else {
+            enableBtn.textContent = 'Disable';
+            enableText.textContent = 'ON';
+            enableText.style.color = 'lawngreen'
+        }
+        //TODO
+    }
+    function setModalText() {
+        var enableBtn = document.querySelector('.enable-btn');
+        var btnText = enableBtn.textContent.trim(); // Lấy nội dung hiện tại của nút
+        var modalBodyText = document.querySelector('.modal-body');
+
+        if (btnText === 'Disable') {
+            modalBodyText.textContent = 'Do you want to disable this user?';
+        }
+        else {
+            modalBodyText.textContent = 'Do you want to enable this user?';
+        }
+    }
+</script>

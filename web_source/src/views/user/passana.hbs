@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/css/passana.css">
+<div class="container ">
+    <div class="passana-title">
+        Password Analyser
+    </div>
+    <div class="row justify-content-center">           
+        <div class="col-6">
+            <div class="row password-card">
+                <form action="/analyze" method="POST">
+                    <div class="row form-head">
+                        <h3>Analyse</h3>
+                    </div>
+                    <input type="text" class="form-control input-style" 
+						placeholder="Secure your password your way" id="password" 
+						name="password" value="{{password}}">
+                    <div id="keyDescription" class="form-text">Password that need analyze</div>
+					<div class="row justify-content-end" style="padding:5px">
+						<button class="col-4 btn btn-primary" type="submit" onclick=""> Analyse </button>
+					</div>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-6 grid" id="card-holder">
+        {{#if criteria}}
+            {{#each criteria}}
+            <div class="card card-style">
+                <div class="card-body">
+                    <h5 class="card-title"> {{this.title}}</h5>
+                    <h6 style="font-style: italic;"> {{this.content}} </h6> 
+					<span> 
+						{{#each this.msg}}
+							{{this}} <br>
+						{{/each}}
+					</span>
+                </div>
+                {{!-- Tail --}}
+                {{#if this.tail1}}
+                <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 18px">
+                    <div class="progress-bar bg-danger progess-style" style="width: 25%">Weak</div> 
+                </div>
+                {{/if}} 
+                {{#if this.tail2}}
+                <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 18px">
+                    <div class="progress-bar bg-warning" style="width: 50%">Medium</div> 
+                </div>
+                {{/if}} 
+                {{#if this.tail3}}
+                <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 18p">
+                    <div class="progress-bar bg-info" style="width: 75%">Good</div>
+                </div>
+                {{/if}} 
+                {{#if this.tail4}}
+                <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 18px">
+                    <div class="progress-bar bg-success" style="width: 100%">Strong</div> 
+                </div>
+                 {{/if}} 
+            </div>
+            {{/each}}
+        {{/if}}
+    </div>
+</div>  

@@ -1,0 +1,522 @@
+<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        height: 50%;
+    }
+    .circle {
+        margin-top: 20px;
+        width: 150px;
+        height: 150px;
+        background-color: #33A0F2;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 28px;
+    }          
+
+    .number {
+        margin-left: 10px;
+        font-size: 48px;
+    }
+
+    .total {
+        margin-left: 10px;
+        font-size: 24px;
+    }
+
+    .stars {
+        margin-top: 10px;
+        color: #FFD600;
+        font-size: 24px;
+    }
+
+    .feedback-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: left;
+        height: 50%;
+    }
+
+    .feedback-container .left img {
+        width: 40%;
+        height: auto;
+        margin: 0 30%;
+    }
+
+    .feedback-container .left p {
+        background-color: #E6E0E9;
+        border-radius: 10px;
+        padding: 5px 10px;
+        width: 80%;
+        margin: 5px 10% 0;
+        text-align: center;
+    }
+
+    .feedback-container .right {
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    .feedback-container .right button {
+        background-color: #56B8FF;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .feedback-container .right button:hover {
+        background-color: #4395cf;
+    }
+
+    .feedback-container .right .addFeedback {
+        width: 60%;
+        height: 100px;
+        margin: 0 20%;
+    }
+
+    .feedback-container .right .confirm-Feedback {
+        width: 100px;
+    }
+
+    .feedback-container #feedback-form {
+        width: 100%;
+        border-radius: 10px;
+        background-color: #EFEFEF;
+    }
+
+    .feedback-container textarea {
+        padding: 10px;
+    }
+
+    .feedback-container .feedback-text {
+        width: 100%;
+        border-radius: 10px;
+        background-color: #EFEFEF;
+        height: 120px;
+        padding: 10px;
+    }
+
+    div.stars{
+        width: 270px;
+        display: inline-block;
+    }
+        
+    input.star { 
+        display: none; 
+    }
+        
+    .stars label.star {
+        float: right;
+        padding: 10px;
+        font-size: 36px;
+        color: #444;
+        transition: all .2s;
+    }
+        
+    input.star:checked ~ label.star:before {
+        content: '\f005';
+        color: #FD4;
+        transition: all .25s;
+    }
+        
+    label.star:hover { 
+        transform: rotate(-15deg) scale(1.3); 
+    }
+        
+    label.star:before {
+        content: '\f006';
+        font-family: FontAwesome;
+    } 
+
+    .fixedStars label.star {
+        float: right;
+        padding: 10px;
+        font-size: 25px;
+        color: #444;
+        transition: all .2s;
+    }
+
+
+    .col1-row1-fb {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .fixedStars {
+        float: left;
+        width: 50%;
+        display: inline-block;
+    }
+
+    .date-time-feedback {
+        float: right;
+        text-align: right;
+        width: 50%;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+   
+</style>
+<div class="container container-fluid">
+    <div class="col-lg-4"></div>
+    <div class="circle col-lg-4" style="
+                font-weight: 700; 
+                color: white;
+                text-shadow: 3px 0 #b6cde7, -3px 0 #0075FF, 0 3px #0075FF, 0 -3px #0075FF, 3px 3px #0075FF, -3px -3px #0075FF, 3px -3px #0075FF, -3px 3px #0075FF, 6px 6px #00000040;
+            ">MYPW</div>
+    <div class="number-container col-lg-8">
+        <div class="number">{{averageStar}}</div>
+        <div class="total">&#127939; total: {{feedbackCount }}</div>
+        <div class="stars">&#9733;  &#9733;  &#9733;  &#9733;  &#9733;</div>
+    </div>
+</div>    
+<div class="feedback-container container-fluid">
+    <div class="left col-lg-4">
+        <img src="https://img.hoidap247.com/picture/question/20210531/large_1622431721191.jpg?v=0" alt="Avatar" class="avatar circle">
+        <p>{{currentUserInfo.[0].firstName}} {{currentUserInfo.[0].lastName}}</p>
+    </div>
+    <div class="right col-lg-8">
+        {{#if currentUserFeedbackItem.[0]}}
+            <div class="feedback-container container-fluid">
+                <div class="right col-lg-8">
+                    <div class="fixedStars">
+                        {{#each currentUserFeedbackItem.[0].stars}}
+                            <input class="bi bi-star star star-{{this}}" id="star-{{this}}" type="radio" name="star" 
+                                value="{{this}}" 
+                                {{#if this}}checked{{/if}} 
+                                disabled
+                            >
+                            <label class="star star-{{this}}" for="star-{{this}}"></label>
+                        {{/each}}
+                    </div>
+
+                    <form>
+                        <button type="button" class="delete-feedback btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                            Delete
+                        </button>
+
+                        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="confirmModalLabel">ANNOUNCE</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Do you want to delete your feedback?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="deletedFeedback()">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="date-time-feedback">
+                        {{currentUserFeedbackItem.[0].time}}
+                    </div>
+
+                    <textarea class="feedback-text" id="floatingTextareaDisabled" disabled="disabled">
+                        {{currentUserFeedbackItem.[0].stars}}
+                    </textarea>
+                </div>
+            </div>
+        {{else}}
+            <button type="button" class="addFeedback" onclick="showFeedbackForm()">Add Feedback</button>
+        {{/if}}
+    </div>
+</div>
+
+<script type="text/javascript">
+    function showFeedbackForm() {
+        var feedbackContent = document.querySelector(".feedback-container .right");
+        var button = document.querySelector(".feedback-container .right button");
+        feedbackContent.removeChild(button);
+        var formElement = document.createElement("form");
+
+        var textElement = document.createElement("textarea");
+        textElement.id = "feedback-form";
+        textElement.name = "feedback-form"; 
+        textElement.rows = 5; 
+        textElement.placeholder="Write your feedback here...";
+
+        var starsDiv = document.createElement("div");
+        starsDiv.className = "stars";
+        for (var i = 5; i >= 1; i--) {
+            var input = document.createElement("input");
+            input.className = "bi bi-star star star-" + i;
+            input.id = "star-" + i;
+            input.type = "radio";
+            input.name = "star";
+            input.value = i;
+            var label = document.createElement("label");
+            label.className = "star star-" + i;
+            label.htmlFor = "star-" + i;
+            starsDiv.appendChild(input);
+            starsDiv.appendChild(label);
+        }
+
+        var submitElement = document.createElement("button");
+        submitElement.type = "button";
+        submitElement.innerText="Confirm";
+        submitElement.className = "confirm-feedback btn btn-primary";
+        submitElement.setAttribute("data-bs-toggle", "modal");
+        submitElement.setAttribute("data-bs-target", "#confirmModal");
+
+        var modalContainer = document.createElement("div");
+        modalContainer.setAttribute("class", "modal fade");
+        modalContainer.setAttribute("id", "confirmModal");
+        modalContainer.setAttribute("tabindex", "-1");
+        modalContainer.setAttribute("aria-labelledby", "confirmModalLabel");
+        modalContainer.setAttribute("aria-hidden", "true");
+
+        var modalDialog = document.createElement("div");
+        modalDialog.setAttribute("class", "modal-dialog");
+
+        var modalContent = document.createElement("div");
+        modalContent.setAttribute("class", "modal-content");
+
+        var modalHeader = document.createElement("div");
+        modalHeader.setAttribute("class", "modal-header");
+
+        var modalTitle = document.createElement("h1");
+        modalTitle.setAttribute("class", "modal-title fs-5");
+        modalTitle.setAttribute("id", "confirmModalLabel");
+        modalTitle.textContent = "ANNOUNCE";
+
+        var closeButton = document.createElement("button");
+        closeButton.setAttribute("type", "button");
+        closeButton.setAttribute("class", "btn-close");
+        closeButton.setAttribute("data-bs-dismiss", "modal");
+        closeButton.setAttribute("aria-label", "Close");
+
+        modalHeader.appendChild(modalTitle);
+        modalHeader.appendChild(closeButton);
+
+        var modalBody = document.createElement("div");
+        modalBody.setAttribute("class", "modal-body");
+        modalBody.textContent = "Do you want to add your feedback?";
+
+        var modalFooter = document.createElement("div");
+        modalFooter.setAttribute("class", "modal-footer");
+
+        var closeBtn = document.createElement("button");
+        closeBtn.setAttribute("type", "button");
+        closeBtn.setAttribute("class", "btn btn-secondary");
+        closeBtn.setAttribute("data-bs-dismiss", "modal");
+        closeBtn.textContent = "Cancel";
+
+        var confirmBtn = document.createElement("button");
+        confirmBtn.setAttribute("type", "button");
+        confirmBtn.setAttribute("class", "btn btn-primary");
+        confirmBtn.setAttribute("data-bs-dismiss", "modal");
+        confirmBtn.setAttribute("onclick", "showNewFeedback()");
+        confirmBtn.textContent = "Confirm";
+
+        modalFooter.appendChild(closeBtn);
+        modalFooter.appendChild(confirmBtn);
+        modalContent.appendChild(modalHeader);
+        modalContent.appendChild(modalBody);
+        modalContent.appendChild(modalFooter);
+        modalDialog.appendChild(modalContent);
+        modalContainer.appendChild(modalDialog);
+
+        var container2col = document.createElement("div");
+        container2col.className= "row";
+        var col1Feedback = document.createElement("div");
+        col1Feedback.className = "col-lg-8";
+        col1Feedback.appendChild(textElement);
+        col1Feedback.appendChild(starsDiv);
+        var col2Feedback = document.createElement("div");
+        col2Feedback.className = "col-lg-4";
+        col2Feedback.appendChild(submitElement);
+        col2Feedback.appendChild(modalContainer);
+        container2col.appendChild(col1Feedback);
+        container2col.appendChild(col2Feedback);
+
+        formElement.appendChild(container2col);
+        feedbackContent.appendChild(formElement);
+        
+        return;
+    }
+
+    function showNewFeedback(){
+        var feedbackContent = document.querySelector(".feedback-container .right");
+        var formElement = document.querySelector(".feedback-container .right form");
+        var text = document.getElementById("feedback-form");
+        var star = document.getElementsByName('star');
+        var starValue = 0;
+        for (i = 0; i < star.length; i++) {
+            if (star[i].checked)
+                starValue = star[i].value;
+        }
+
+        feedbackContent.removeChild(formElement);
+
+        var fixedStarsDiv = document.createElement("div");
+        fixedStarsDiv.className = "fixedStars";
+        console.log(starValue);
+        for (var i = 5; i > starValue-1; i--) {
+            var input = document.createElement("input");
+            input.className = "bi bi-star star star-" + i;
+            input.id = "star-" + i;
+            input.type = "radio";
+            input.name = "star";
+            input.className = "star";
+            input.value = i;
+            input.checked = true;
+            input.disabled = true;
+            var label = document.createElement("label");
+            label.className = "star star-" + i;
+            label.htmlFor = "star-" + i;
+            fixedStarsDiv.appendChild(input);
+            fixedStarsDiv.appendChild(label);
+        }
+        for (var i = starValue-1; i >= 1; i--) {
+            var input = document.createElement("input");
+            input.className = "bi bi-star star star-" + i;
+            input.id = "star-" + i;
+            input.type = "radio";
+            input.name = "star";
+            input.className = "star";
+            input.value = i;
+            input.disabled = true;
+            var label = document.createElement("label");
+            label.className = "star star-" + i;
+            label.htmlFor = "star-" + i;
+            fixedStarsDiv.appendChild(input);
+            fixedStarsDiv.appendChild(label);
+        }
+
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes()
+        var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+        var datetime = 'Time: ' + time + ', ' + date;
+        var dateTimeElement = document.createElement("div");
+        dateTimeElement.className = "date-time-feedback";
+        dateTimeElement.innerText = datetime;
+        
+        var feedbackText = document.createElement("textarea");
+        feedbackText.setAttribute("class", "feedback-text");
+        feedbackText.setAttribute("id", "floatingTextareaDisabled");
+        feedbackText.setAttribute("disabled", "disabled");
+        feedbackText.innerText = text.value;
+  
+        var formDelete = document.createElement("form");
+        var deleteElement = document.createElement("button");
+        deleteElement.type = "button";
+        deleteElement.innerText="Delete";
+        deleteElement.className = "delete-feedback btn btn-primary";
+        deleteElement.setAttribute("data-bs-toggle", "modal");
+        deleteElement.setAttribute("data-bs-target", "#confirmModal");
+
+        var modalContainer = document.createElement("div");
+        modalContainer.setAttribute("class", "modal fade");
+        modalContainer.setAttribute("id", "confirmModal");
+        modalContainer.setAttribute("tabindex", "-1");
+        modalContainer.setAttribute("aria-labelledby", "confirmModalLabel");
+        modalContainer.setAttribute("aria-hidden", "true");
+
+        var modalDialog = document.createElement("div");
+        modalDialog.setAttribute("class", "modal-dialog");
+
+        var modalContent = document.createElement("div");
+        modalContent.setAttribute("class", "modal-content");
+
+        var modalHeader = document.createElement("div");
+        modalHeader.setAttribute("class", "modal-header");
+
+        var modalTitle = document.createElement("h1");
+        modalTitle.setAttribute("class", "modal-title fs-5");
+        modalTitle.setAttribute("id", "confirmModalLabel");
+        modalTitle.textContent = "ANNOUNCE";
+
+        var closeButton = document.createElement("button");
+        closeButton.setAttribute("type", "button");
+        closeButton.setAttribute("class", "btn-close");
+        closeButton.setAttribute("data-bs-dismiss", "modal");
+        closeButton.setAttribute("aria-label", "Close");
+
+        modalHeader.appendChild(modalTitle);
+        modalHeader.appendChild(closeButton);
+
+        var modalBody = document.createElement("div");
+        modalBody.setAttribute("class", "modal-body");
+        modalBody.textContent = "Do you want to delete your feedback?";
+
+        var modalFooter = document.createElement("div");
+        modalFooter.setAttribute("class", "modal-footer");
+
+        var closeBtn = document.createElement("button");
+        closeBtn.setAttribute("type", "button");
+        closeBtn.setAttribute("class", "btn btn-secondary");
+        closeBtn.setAttribute("data-bs-dismiss", "modal");
+        closeBtn.textContent = "Cancel";
+
+        var confirmBtn = document.createElement("button");
+        confirmBtn.setAttribute("type", "button");
+        confirmBtn.setAttribute("class", "btn btn-primary");
+        confirmBtn.setAttribute("data-bs-dismiss", "modal");
+        confirmBtn.setAttribute("onclick", "deletedFeedback()");
+        confirmBtn.textContent = "Confirm";
+
+        modalFooter.appendChild(closeBtn);
+        modalFooter.appendChild(confirmBtn);
+        modalContent.appendChild(modalHeader);
+        modalContent.appendChild(modalBody);
+        modalContent.appendChild(modalFooter);
+        modalDialog.appendChild(modalContent);
+        modalContainer.appendChild(modalDialog);
+
+
+
+        var container2col = document.createElement("div");
+        container2col.className= "row";
+        var col1Feedback = document.createElement("div");
+        col1Feedback.className = "col-lg-8";
+        var col1Row1Feedback = document.createElement("div");
+        col1Row1Feedback.className = "col1-row1-fb";
+        col1Row1Feedback.appendChild(fixedStarsDiv);
+        col1Row1Feedback.appendChild(dateTimeElement);
+        col1Feedback.appendChild(col1Row1Feedback);
+        col1Feedback.appendChild(feedbackText);
+        var col2Feedback = document.createElement("div");
+        col2Feedback.className = "col-lg-4";
+        col2Feedback.appendChild(deleteElement);
+        col2Feedback.appendChild(modalContainer);
+        container2col.appendChild(col1Feedback);
+        container2col.appendChild(col2Feedback);
+
+        feedbackContent.appendChild(container2col);
+
+        return;
+    }
+
+    function deletedFeedback() {
+        var feedbackContent = document.querySelector(".feedback-container .right");
+        var rowElement = document.querySelector(".feedback-container .right .row");
+
+        feedbackContent.removeChild(rowElement);
+
+        var button = document.createElement("button");
+        button.type = "button";
+        button.textContent = "Add Feedback";
+        button.setAttribute("class", "addFeedback");
+        button.setAttribute("onclick", "showFeedbackForm()");
+        feedbackContent.appendChild(button);
+
+        return;
+    }
+
+</script>
+    

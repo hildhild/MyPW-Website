@@ -1,0 +1,167 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    padding-inline: 50px;
+}
+
+.passman-title{
+    color: red;
+    width: 456px;
+    height: 60px;
+    text-align: left;
+    color: black;
+    font-size: 38px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+
+
+.tools{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-bar{
+    width: 300px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #009EE2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-inline: 10px;
+}
+
+.search-bar > img{
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+}
+
+#search-text{
+    width: 270px;
+    height: 100%;
+    border-style: none;
+    border-width: 0px;
+    outline: none;
+}
+
+
+.button-container{
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.button-container > button{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border-width: 0px;
+    background-color: #009EE2;
+    color: white;
+}
+
+.table-container{
+    width: 100%;
+    height: 350px;
+    /* border-style: solid;
+    border-width: 1px; */
+}
+
+.password-table{
+    width: 100%;
+    /* height: 70%; */
+}
+
+.password-table tbody >tr {
+    height: 45px;
+}
+
+.password-table th{
+    color: white;
+    text-align: center;
+    background-color: #009EE2;
+    height: 40px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    font-size: 18px;
+
+}
+
+.password-table td{
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+.password-table >tbody>tr>:nth-child(7)>button{
+    color: black;
+    border: none;
+    background-color: white;
+    text-shadow: 1px 1px black;
+    font-weight: 700;
+}
+
+.edit-btn, .delete-btn{
+    width: 13px;
+    height: 13px;
+    background-size: cover;   
+    border: none;
+    margin-right: 8px;
+}
+
+.edit-btn{
+    background-image: url("/img/edit.png");
+}
+
+.delete-btn{
+    background-image: url("/img/x-circle.png");
+}
+
+
+.select-container{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.select-bar{
+    height: 26px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+}
+
+.select-bar > button{
+    height: 26px;
+    width: 26px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #DFE3E8;
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.pre-btn, .next-btn{
+    color: #919EAB;
+}

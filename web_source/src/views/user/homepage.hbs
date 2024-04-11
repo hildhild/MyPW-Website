@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/css/home.css">
+<div class="container">
+    {{!-- Homepage title --}}
+    <div class="row home-title" style="padding-top: 20px">
+        <div class="row col-6 justify-content-center">
+            <div class="col-11 home-title-card">
+                <div style="padding: 10px">
+                    <div style="padding: 5px;">
+                        <span style="font-size:large"><center> <b>Generate your new password</b></center></span>
+                    </div>
+                    <div class="d-grid" style="padding-top: 50px; padding-left: 3rem; padding-right: 3rem;">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" style="border-radius: 10px" onclick="window.location.href='/passgen'">Generate</button>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <div class="row col-6 justify-content-center"> 
+            <div class="col-11 home-title-card">
+                <div style="padding: 10px;">
+                    <div style="padding: 5px; background-color: rgb(243, 238, 246)">
+                        <span> Welcome back! <b>{{user.firstName}} {{user.lastName}}</b></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-6" style="padding: 5px">
+                            <center>
+                                <div style="width: 120px; height: 120px; border-radius: 50%; border: 1px solid grey; overflow:hidden">
+                                    <img src="https://img.hoidap247.com/picture/question/20210531/large_1622431721191.jpg?v=0" alt="Avatar" class="avatar circle">
+                                </div>
+                            </center>
+                        </div>
+                        <div class="col-6" style="padding: 5px">
+                            <center>
+                                <div style="font-size:large;text-align: left; padding-top: 50px">
+                                    <a style="text-decoration: none;" onclick="window.location.href='/userinfo'"> UserID: <b> {{user.username}} </b> </a> 
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- Homepage content --}}
+    <div class="row" style="padding-top: 10px">
+        <div class="row col-6 justify-content-center">
+            <div class="col-11">
+                <table class ="table table-light table-hover">
+                    <thread>
+                        <tr>
+                            <th scope="col" style="width: 60%"> <b style="font-size:larger;">Recent access</b> </th>
+                            <th scope="col justify-content-left" style="width: 30%"> 
+                                <button type="button" class="btn btn-primary btn-block btn-sm" style="border-radius: 10px" onclick="window.location.href='/passman'">
+                                    View all
+                                </button>
+                            </th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        {{#each passwordItems}}
+                            <tr>
+                                <td>{{url}}</td>
+                                <td>{{lastAccessDay}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row col-6 justify-content-center">
+            <div class="col-11">
+                <table class ="table table-light table-hover">
+                    <thread>
+                        <tr>
+                            <th scope="col" style="width: 67%"> <b style="font-size:larger;">Oldest access</b> </th>
+                            <th scope="col justify-content-left" style="width: 33%"> <button type="button" class="btn btn-primary btn-block btn-sm" style="border-radius: 10px" onclick="window.location.href='/passman'">View all</button></th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        {{#each passwordItems}}
+                            <tr>
+                                <td>{{url}}</td>
+                                <td>{{lastAccessDay}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
